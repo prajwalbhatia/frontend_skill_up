@@ -1,0 +1,24 @@
+.column
+{
+  display: inline-block;
+  background-color: red;
+  height: 50px;
+  width: 11.5%;
+  margin: 2px;
+  border: 1px solid black;
+}
+
+.black
+{
+  background-color: black;
+}
+
+.white
+{
+  background-color: white;
+}
+
+.highlight 
+{
+  background-color: red;
+}

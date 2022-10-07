@@ -1,0 +1,31 @@
+#box-container {
+  display: flex;
+  /* flex-direction: row; */
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #e5e5e5;
+  border: 1px solid black;
+}
+
+
+.shake {
+  animation: shake 0.8s infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-8px);
+  }
+
+  20%, 40%, 60%, 80%, 100% {
+    transform: translateX(8px);
+  }
+}
