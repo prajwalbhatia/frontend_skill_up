@@ -20,3 +20,16 @@
 // } 
 
 // console.log(add(5)(2)(8)());
+
+
+// Driver code
+// let sum = function (a) {
+//   // Write your code here
+//   return (b) => {
+//     if (b) return sum(a + b);
+//     else return a;
+//   };
+// };
+
+// console.log(sum(1)(2)(5)());
+// // console.log(sum(1)(2)(5)());
