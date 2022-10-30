@@ -26,7 +26,6 @@ function createBoard(el, boardSide) {
       iElem.dataset.column = j;
       iElem.dataset.row = i;
       iElem.id = `${i}${j}`
-      // iElem.innerHTML = `[${i}][${j}]`
 
       rowElem.appendChild(iElem)
 

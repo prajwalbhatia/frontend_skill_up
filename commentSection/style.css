@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 20px;
+}
+
+.comment-input {
+  width: 500px;
+}
+
+#commentSection {
+  margin-top: 20px;
+}
+
+.commentReplyBtn , .commentEditBtn , .commentUpdateBtn {
+  color: blue;
+  font-size: 10px;
+  margin-top: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.commentDiv {
+  margin-top: 10px;
+  padding-left: 15px;
+
+  border-left: 1px solid #e5e5e5;
+  padding: 10px;
+  /* border-radius: 5px; */
+  background: white;
+
+}
+
+#commentSection>.commentDiv {
+  border-left: none;
+
+}
+
+.p-l-15 {
+  padding-left: 15px;
+}
