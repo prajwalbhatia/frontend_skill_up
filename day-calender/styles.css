@@ -1,0 +1,20 @@
+.calender {
+  padding: 30px;
+}
+
+.calender-row {
+  height: 120px;
+  display: flex;
+  position: relative;
+  /* align-items: center; */
+}
+
+.meeting-row
+{
+  width: 90%;
+  position: absolute;
+  right: 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+}

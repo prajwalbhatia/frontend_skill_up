@@ -20,30 +20,40 @@ commentBtn.addEventListener('click', (e) => {
 function submitComment(e , keyAt)
 {
   let keyAtt = e.target.dataset.key || keyAt;
+
+  //Creating comment obj and pushing to arr
   const commentObj = createCommentObj(keyAtt);
   commentObj.comment = commentValue
   comments.push(commentObj);
 
+  //removing the previous comment section div
   const sec = document.querySelector('#commentSection');
   if (sec)
     sec.remove();
 
+  //creating new comment section div  
   const commentSection = document.createElement('div');
   commentSection.id = 'commentSection';
-
   commentSection.addEventListener('click', (e) => replyClicked(e))
 
+  //converting the flat comments array to nested one
   const convertedComments = convertComments(null, null);
-  console.log('🚀 ~ file: index.js ~ line 37 ~ convertedComments', convertedComments);
   loopingOverComments(convertedComments, commentSection);
 
 }
 
+/**
+ * 
+ * @param {Array} convertedComments - array of objects containing comments with nested children 
+ * @param {Object} commentSection - elemnt having id commentSection 
+ */
 function loopingOverComments(convertedComments, commentSection)
 {
+  //Creating comment ui for each comment
   convertedComments.forEach((comment) => {
     createComment(comment, commentSection);
 
+    //if comment has children then looping over again
     if(comment.children.length > 0)
     {
       loopingOverComments(comment.children , commentSection)
@@ -51,13 +61,22 @@ function loopingOverComments(convertedComments, commentSection)
   })
 }
 
+/**
+ * 
+ * @param {Object} parent - parent object 
+ * @param {String} parentId 
+ * @returns 
+ */
 function convertComments(parent, parentId) {
+  //Filtering with parentId (which is null in initial case)
   const filterWithParentId = comments.filter((comment) => comment.parentId === parentId);
 
+  //adding the childrens to children array
   if (parent && filterWithParentId.length > 0) {
     parent.children = [...filterWithParentId];
   }
-
+  
+  //looping over the comments
   if (filterWithParentId.length > 0) {
     filterWithParentId.filter((comment) => {
       convertComments(comment, comment.id)
@@ -67,6 +86,11 @@ function convertComments(parent, parentId) {
   return filterWithParentId;
 }
 
+/**
+ * 
+ * @param {Object} comment - comment object
+ * @param {Object} commentSection - elemnt having id commentSection 
+ */
 function createComment(comment, commentSection) {
   let commentDiv = document.createElement('div');
   let commentPara = document.createElement('p');
@@ -102,7 +126,6 @@ function createComment(comment, commentSection) {
   commentDiv.appendChild(deleteBtn);
 
   let parentElement = null
-  // debugger
   if (comment.parentId && comment.parentId == Number(comment.parentId)) {
     const keyVal = `[data-parent-key="${comment.parentId}"]`
 
@@ -112,7 +135,6 @@ function createComment(comment, commentSection) {
 
   if (parentElement) {
     if (comment.parentId)
-      // commentDiv.classList.add('p-l-15');
       parentElement.appendChild(commentDiv);
   }
   else {
@@ -148,9 +170,6 @@ function createCommentObj(keyAtt) {
 
 function replyClicked(e) {
   let keyAtt = e.target.dataset.key;
-  // const commentObj = createCommentObj(keyAtt);
-  // commentObj.comment = commentValue
-  // createComment(commentObj);
 
   if (keyAtt) {
     const input = document.createElement('input');
@@ -172,7 +191,6 @@ function replyClicked(e) {
 
     input.addEventListener('input', (e) => {
       commentValue = e.target.value;
-      console.log('🚀 ~ file: index.js ~ line 147 ~ input.addEventListener ~ commentValue', commentValue);
     });
 
     button.addEventListener('click', (e) => {

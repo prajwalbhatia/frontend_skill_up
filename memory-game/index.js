@@ -16,6 +16,8 @@ let gameBoxActive = {
 
 }
 
+let prevRandomNumber = null;
+
 let prevBlock = null;
 
 function drawMemoryBox(boxes) {
@@ -38,6 +40,10 @@ function btnClick() {
   startGame();
 }
 
+function generateRandomNumber() {
+  return Math.floor(Math.random() * (BOXES - 1));
+}
+
 function startGame() {
   let count = boxBlueCount;
   let interval;
@@ -47,15 +53,23 @@ function startGame() {
       if (prevBlock) {
         prevBlock.style.backgroundColor = '#e5e5e5';
       }
-      let randomNum = Math.floor(Math.random() * (BOXES - 1));
+      let randomNum = generateRandomNumber();
+      while (randomNum === prevRandomNumber) {
+        randomNum = generateRandomNumber();
+      }
 
-      let getBox = document.querySelector(`[data-key="${randomNum}"]`);
-      gameBoxActive[index] = getBox;
-      index++;
+      if (randomNum !== prevRandomNumber) {
+        let getBox = document.querySelector(`[data-key="${randomNum}"]`);
+        gameBoxActive[index] = getBox;
+        index++;
+
+        prevBlock = getBox;
+        getBox.style.backgroundColor = 'blue';
+        prevRandomNumber = randomNum
+
+      }
 
 
-      prevBlock = getBox;
-      getBox.style.backgroundColor = 'blue';
     }
 
     if (count === 0) {
@@ -65,7 +79,7 @@ function startGame() {
     count--;
 
     console.log(gameBoxActive)
-  }, 200)
+  }, 500)
 }
 
 function boxContainerFun() {
@@ -73,7 +87,7 @@ function boxContainerFun() {
     if (boxClicked < boxBlueCount && gameActive) {
       let className = e.target.className;
       let clickedElm = e.target;
-      
+
       if (className === 'box') {
         if (clickedElm === gameBoxActive[boxClicked]) {
           console.log(true)
@@ -90,12 +104,11 @@ function boxContainerFun() {
           }
           scoreElm.innerHTML = score;
           highScoreElm.innerHTML = highScore;
-          if(boxClicked === boxBlueCount - 1)
-          {
+          if (boxClicked === boxBlueCount - 1) {
             gameChanger('win');
           }
-          else{
-          boxClicked++;
+          else {
+            boxClicked++;
           }
         }
         else {
@@ -114,24 +127,21 @@ function boxContainerFun() {
   })
 }
 
-function gameChanger(gameType)
-{
-  if(gameType === 'win')
-  {
+function gameChanger(gameType) {
+  if (gameType === 'win') {
     level++;
     boxBlueCount = level + 2;
   }
-  else
-  {
+  else {
     level = 0;
     boxBlueCount = 0;
   }
-  
-  console.log('LEVEL' , level)
+
+  console.log('LEVEL', level)
   gameBoxActive = {};
   gameActive = false;
   score = 0;
-  
+
   index = 0;
   // boxContainerFun();
   boxClicked = 0;
@@ -144,8 +154,7 @@ function gameChanger(gameType)
       scoreElm.innerHTML = score;
     }, 1000);
   }
-  else
-  {
+  else {
     setTimeout(() => {
       alert('GAME OVER')
       scoreElm.innerHTML = score;
