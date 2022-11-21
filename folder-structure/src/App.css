@@ -1,0 +1,46 @@
+.folder {
+  background-color: #e5e5e5;
+  width: 400px;
+  padding: 6px;
+  margin-top: 6px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btns {
+  display: flex;
+
+}
+
+.btns>button {
+  border: 1px solid black;
+  margin-right: 5px;
+  padding: 2px 5px;
+}
+
+.btns>button:hover {
+  background-color: #b9a4a4;
+  color: #e5e5e5;
+}
+
+.inputContainer {
+  margin: 5px;
+}
+
+.inputContainer__span {
+  margin-right: 5px;
+}
+
+.inputContainer__input {}
+
+.file {
+  margin-top: 6px;
+  padding-left: 5px;
+  display: flex;
+  width: 400px;
+  padding: 6px;
+  margin-top: 6px;
+  display: flex;
+  justify-content: space-between;
+}

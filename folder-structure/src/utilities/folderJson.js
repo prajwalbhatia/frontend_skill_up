@@ -1,76 +1,72 @@
 const structure = {
-  name: 'root',
+  id: "1",
+  name: "root",
   isFolder: true,
   items: [
     {
-      name: 'node_modules',
-      isFolder: true,
-      items: []
-    },
-    {
-      name: 'public',
-      isFolder: true,
-      items: []
-    },
-    {
-      name: 'src',
+      id: "2",
+      name: "public",
       isFolder: true,
       items: [
         {
-          name: 'FolderStructure',
+          id: "3",
+          name: "public nested 1",
           isFolder: true,
           items: [
             {
-              name: 'folderStructure.js',
+              id: "4",
+              name: "index.html",
               isFolder: false,
+              items: []
             },
+            {
+              id: "5",
+              name: "hello.html",
+              isFolder: false,
+              items: []
+            }
           ]
         },
         {
-          name: 'App.js',
+          id: "6",
+          name: "public_nested_file",
           isFolder: false,
+          items: []
         }
       ]
     },
     {
-      name: 'index.html',
+      id: "7",
+      name: "src",
+      isFolder: true,
+      items: [
+        {
+          id: "8",
+          name: "App.js",
+          isFolder: false,
+          items: []
+        },
+        {
+          id: "9",
+          name: "Index.js",
+          isFolder: false,
+          items: []
+        },
+        {
+          id: "10",
+          name: "styles.css",
+          isFolder: false,
+          items: []
+        }
+      ]
+    },
+    {
+      id: "11",
+      name: "package.json",
       isFolder: false,
+      items: []
     }
   ]
-}
-
-
-// const structure = {
-//   name: 'root',
-//   isFolder: true,
-//   items: [
-//     {
-//       name: 'node_modules',
-//       isFolder: true,
-//       items: []
-//     },
-//     {
-//       name: 'src',
-//       isFolder: true,
-//       items: [
-//         {
-//           name: 'FolderStructure',
-//           isFolder: true,
-//           items: [
-//             {
-//               name: 'folderStructure.js',
-//               isFolder: false,
-//             },
-//           ]
-//         },
-//         {
-//           name: 'App.js',
-//           isFolder: false,
-//         }
-//       ]
-//     },
-//   ]
-// }
-
+};
 
 export default structure;
