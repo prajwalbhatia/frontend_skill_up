@@ -18,22 +18,51 @@ function Steps({ current, onChange, children }) {
           elm.style.background = "white";
         }
 
-        if (prevSibling === null || nxtSibling === null)
+        if (elm)
         {
-          elm.style.background = "blue";
+          let val = +keyVal.split(" ")[1];
+
+          let circle = elm.querySelector('.circle');
+          let spanEl = elm.querySelector('.data');
+          let spanEl1 = elm.querySelector('.data1');
+          circle.innerHTML = val
+
+          circle.style.background = "blue";
+          spanEl.style.color = "#000";
+          spanEl1.style.color = "#000";
+          circle.style.color = 'white'
         }
 
         if (prevSibling) {
           while (prevSibling !== null) {
-            prevSibling.style.background = "blue";
+            let circle = prevSibling.querySelector('.circle');
+            let spanEl = prevSibling.querySelector('.data');
+            let spanEl1 = prevSibling.querySelector('.data1');
+
+            circle.style.background = "blue";
+            circle.innerHTML = "✅"
+            circle.style.color = 'white';
+            spanEl.style.color = "#000";
+            spanEl1.style.color = "#000";
             prevSibling = prevSibling.previousSibling;
           }
         }
 
         if (nxtSibling) {
+          let val = +keyVal.split(" ")[1] + 1;
           while (nxtSibling !== null) {
-            nxtSibling.style.background = "red";
+            let circle = nxtSibling.querySelector('.circle');
+            let spanEl = nxtSibling.querySelector('.data');
+            let spanEl1 = nxtSibling.querySelector('.data1');
+
+            circle.innerHTML = val
+            circle.style.background = "#fff";
+            circle.style.color = "#e5e5e5";
+            spanEl.style.color = "#e5e5e5";
+            spanEl1.style.color = "#e5e5e5";
+
             nxtSibling = nxtSibling.nextSibling;
+            val += 1;
           }
         }
 

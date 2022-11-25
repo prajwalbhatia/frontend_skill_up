@@ -9,8 +9,8 @@ function Step({ title, description, stepClicker }) {
         {title.split(' ')[1]}
       </div>
       <div data-key={title} className="data-container">
-        <span data-key={title}>{title}</span>
-        <span data-key={title}>{description}</span>
+        <span className="data" data-key={title}>{title}</span>
+        <span className="data1" data-key={title}>{description}</span>
       </div>
     </div>
   );

@@ -20,14 +20,6 @@ export default function App() {
 
       <Step title="Step 3" description="This is Step 3" />
 
-      <Step title="Step 4" description="This is Step 3" />
-
-
-      <Step title="Step 5" description="This is Step 3" />
-
-
-      <Step title="Step 6" description="This is Step 3" />
-
     </Steps>
   );
 }
