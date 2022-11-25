@@ -1,0 +1,39 @@
+body {
+  font-family: sans-serif;
+}
+
+#app
+{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+input {
+  width: 500px;
+  height: 40px;
+  outline: none;
+}
+
+.suggestion-wrapper {
+  display: none;
+  max-height: 200px;
+  width: 508px;
+  overflow: scroll;
+  border: 1px solid #e5e5e5;
+}
+
+.dropdown-item {
+  height: 15px;
+  padding: 10px;
+}
+
+.dropdown-item:hover {
+  background-color: #e5e5e5;
+}
+
+.visible {
+  display: block;
+}
