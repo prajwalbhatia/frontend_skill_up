@@ -23,4 +23,4 @@ function customPush()
   return this.length;
 }
 
-Array.prototype.customPush;
+Array.prototype.customPush = customPush;
