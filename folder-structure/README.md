@@ -13,6 +13,6 @@
 
 ## Project Result 
 
-<img src="./folder-structure.gif" alt="project-result" width="500" height="400" />
+[Link to video](https://www.linkedin.com/posts/prajwalbhatia_frontenddevelopment-reactjs-practice-activity-7000535685891821568--3yS?utm_source=share&utm_medium=member_desktop)
 
 ## If you like my solution then please don't forget to star the repoa and share your solution on social. You can tag me there :-)
