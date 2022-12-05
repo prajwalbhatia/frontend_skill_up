@@ -13,8 +13,6 @@
 
 ## Project Result 
 
-
-![alt text](./folder-structure-result.png)
-
+<img src="./folder-structure.gif" alt="project-result" width="500" height="400" />
 
 ## If you like my solution then please don't forget to star the repoa and share your solution on social. You can tag me there :-)
