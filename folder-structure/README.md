@@ -14,7 +14,7 @@
 ## Project Result 
 
 
-![alt text](./folder-structure.gif)
+![alt text](./folder-structure-result.png)
 
 
 ## If you like my solution then please don't forget to star the repoa and share your solution on social. You can tag me there :-)
