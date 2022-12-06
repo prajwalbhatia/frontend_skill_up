@@ -2,7 +2,6 @@ import { getSuggestion, debounce } from "./utils.js";
 
 const inputBox = document.querySelector("#search-input");
 const suggestionBox = document.querySelector("#suggestion-box");
-console.log(inputBox);
 
 const resetState = () => {
   suggestionBox.classList.remove("visible");
@@ -20,13 +19,25 @@ const selectingItem = (event) => {
 const renderDropdownItem = (list = []) => {
   const suggFragment = document.createDocumentFragment();
 
-  list.forEach((item) => {
+  if(list.length > 0)
+  {
+    list.forEach((item) => {
+      const el = document.createElement("div");
+      el.innerHTML = item;
+      el.classList.add("dropdown-item");
+      el.setAttribute('data-key', item);
+      suggFragment.appendChild(el);
+    });
+  }
+  else
+  {
     const el = document.createElement("div");
-    el.innerHTML = item;
+    el.innerHTML = "No Suggestion";
     el.classList.add("dropdown-item");
-    el.setAttribute('data-key', item);
+    el.setAttribute('data-key', "No suggestion");
     suggFragment.appendChild(el);
-  });
+  }
+
 
   suggestionBox.innerHTML = "";
   suggestionBox.appendChild(suggFragment);
@@ -41,16 +52,16 @@ const handleInputChange = (event) => {
 
 const handleSearch = async (keyword) => {
   const results = await getSuggestion(keyword);
-  console.log(results);
 
-  if (results.length > 0) {
-    suggestionBox.classList.add("visible");
-    renderDropdownItem(results);
-  } else {
+  if(keyword.length === 0)
+  {
     resetState();
   }
-
-  console.log(results);
+  else
+  {
+    suggestionBox.classList.add("visible");
+    renderDropdownItem(results);
+  }
 };
 
 (() => {

@@ -2,8 +2,8 @@ import { useState } from "react";
 
 // import "./styles.css";
 
-import Step from "../src/Components/Step/Step";
-import Steps from "../src/Components/Steps/Steps";
+import Step from "./Components/Step/Step";
+import Steps from "./Components/Steps/Steps";
 
 export default function App() {
   const [current, setCurrent] = useState("");

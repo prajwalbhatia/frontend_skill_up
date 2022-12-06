@@ -1,11 +1,6 @@
-/**
- * Read FAQs section on the left for more information on how to use the editor
-**/
 function customPop() {
-  // DO NOT REMOVE
   'use strict';
 
-  // Write your solution below
   if (this === null || this === undefined) {
     throw new TypeError('Please use array')
   }
