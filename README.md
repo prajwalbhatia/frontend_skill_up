@@ -6,6 +6,7 @@
 
   <p align="center">
     A public repositry that contains question, concepts, mini projects everything related to frontend interview preparation but not limited to it. Is will    also help developers to gain more knowledge. 
+   The main motive of creating this repo is to bring all the frontend related stuff at one place.
     <br />
   </p>
 </div>
