@@ -32,6 +32,7 @@
     </li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#support">Support</a></li>
   </ol>
 </details>
 
@@ -118,6 +119,11 @@ Your Name - [@bhatia_prajwal](https://twitter.com/bhatia_prajwal) - prajwal6bhat
 Project Link: [https://github.com/prajwalbhatia/interviewPrep](https://github.com/prajwalbhatia/interviewPrep)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+## Support
+
+<a href="https://www.buymeacoffee.com/prajwal6bhJ">BUY ME A COFFEE</a>
 
 
 
