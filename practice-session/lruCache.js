@@ -1,64 +1,142 @@
-//LEAST RESENTLY USED CACHE
+//What is LRU?
+//1) It is Least Recenty Used cache
+//2) It is caching policy that is used to remove elements from the cache to make room for new elements if the cacahe is full
 
-//1) Keep on adding key value pairs to a map to a particular number
-//2) once that number is hit then we will remove the key which is least and new key is added
-//3) How recently used is defined - it is defined by , if we are getting//pring the key then it is recently used
+//OPERATIONS
+//1) Add elements (if is full then we have to remove least used item and add the new item)
+//2) Access elements (now as we have accessed a value therefore we have to add that particular item to the first as it now became most recently used item)
+//3) Remove element from cache
+//4) Update a value
 
-// let cache = new Map();
-// let max = 5;
-
-// function addingItem(key , value)
-// {
-//   cache.set(key , value)
-// }
+//(Question from Prashant Yadhav ebook)
 
 
-// class LRUcache {
-//   constructor(max)
-//   {
-//     this.max = max;
-//     this.cache = new Map();
-//   }
+class Node {
+  constructor(key, value) {
+    this.key = key;
+    this.value = value;
+    this.prev = null;
+    this.next = null;
+  }
+}
 
-//   first ()
-//   {
-//     return this.cache.keys().next().value
-//   }
-
-//   addingItem(key, value)
-//   {
-//     if (this.cache.has(key)) this.cache.delete(key);
-
-//     else if(this.max === this.cache.size)
-//     {
-//       this.cache.delete(this.first());
-//     }
-    
-//     this.cache.set(key , value);
-//   }
-
-//   gettingItem(key)
-//   {
-//       const item = this.cache.get(key);
-
-//       if(item)
-//       {
-//         this.cache.delete(key);
-//         this.cache.set(key , item);
-//       }
-//       return item;
-//   }
-// }
-
-// const newCache = new LRUcache(4);
-
-// newCache.addingItem('name' , 'Prajwal')
-// newCache.addingItem('age', '24')
-// newCache.gettingItem('name')
-
-// newCache.addingItem('job', 'working')
-// newCache.addingItem('sex', 'male')
+const LRUCache = function (cap) {
+  this.cap = cap;
+  this.count = 0;
+  this.head = null;
+  this.tail = null;
+  this.cache = new Map();
 
 
+  this.get = function (key) {
+    if (!this.cache.has(key)) {
+      return -1;
+    }
 
-// console.log(newCache)
+    const node = this.cache.get(key);
+    this.use(key);
+    return node.value;
+  }
+
+  this.put = function (key, value) {
+    if (this.cache.has(key)) {
+      const node = this.cache.get(key);
+      node.value = value;
+      this.use(key);
+      this.cache.set(key, node);
+    }
+    else {
+      if (this.count >= this.cap) {
+        this.evict();
+      }
+
+      this.insert(key, value);
+    }
+  }
+
+  this.use = function (key) {
+    const node = this.cache.get(key);
+
+    if (node === this.head) {
+      return;
+    }
+    else if (node === this.tail) {
+      node.prev.next = null;
+      this.tail = node.prev;
+      node.prev = null;
+      node.next = this.head;
+      this.head.prev = node;
+      this.head = node;
+    }
+    else {
+      if (node.prev) {
+        node.prev.next = node.next;
+      }
+
+      if (node.next) {
+        node.next.prev = node.prev;
+      }
+
+      node.next = this.head;
+      node.prev = null;
+      this.head.prev = node;
+      this.head = node;
+    }
+  }
+
+
+  this.evict = function () {
+    const keyToEvict = this.tail ? this.tail.key : null;
+
+    if (!this.tail)
+      return
+    else if (this.head === this.tail) {
+      this.head = null;
+      this.tail = null;
+    }
+    else {
+      this.tail.prev.next = null;
+      this.tail = this.tail.prev;
+    }
+
+    if (keyToEvict) {
+      this.count--;
+      this.cache.delete(keyToEvict);
+    }
+  }
+
+  this.insert = function (key, value) {
+    const node = new Node(key, value);
+    this.count++;
+    this.cache.set(key, node);
+
+    if (!this.head) {
+      this.head = node;
+      this.tail = node;
+    }
+    else {
+      this.head.prev = node;
+      node.next = this.head;
+      this.head = node;
+    }
+  }
+
+  this.display = function () {
+    let current = this.head;
+
+    while (current) {
+      console.log(current.key, current.value);
+      current = current.next;
+    }
+  }
+
+}
+
+const lru = new LRUCache(4);
+
+lru.put(1, 'a');
+lru.put(2, 'b');
+lru.put(3, 'c');
+lru.put(4, 'd');
+lru.use(2);
+lru.display();
