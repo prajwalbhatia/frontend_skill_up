@@ -7,6 +7,7 @@ import MemoFIle from './memoFile';
 import PortalDemo from './portalDemo';
 import HeroName from './HeroName';
 import ErrorBoundary from './ErrorBoundary';
+import HooksPractice from './hooksPractice';
 
 function App() {
   const inputRef = useRef();
@@ -24,7 +25,10 @@ function App() {
 
   return (
     <div className="App">
-      <ErrorBoundary>
+      
+    <HooksPractice/>
+
+      {/* <ErrorBoundary>
         <HeroName name={'Joker'} />
 
       </ErrorBoundary>
@@ -32,7 +36,7 @@ function App() {
       <ErrorBoundary>
         <HeroName name={'BATMAN'} />
 
-      </ErrorBoundary>
+      </ErrorBoundary> */}
       {/* <PortalDemo/> */}
       {/* <MemoFIle name={name}/> */}
       {/* <InputForward ref={inputRef}/>

@@ -33,7 +33,7 @@ function MyOwnPromise(callback) {
       onResolve(value);
     }
 
-    return this;
+    return  this;
   }
 
   this.catch = function (callback) {
@@ -57,6 +57,10 @@ let promiseCall = new MyOwnPromise((resolve, reject) => {
 
 promiseCall.then((res) => {
   console.log(res);
-}).catch((error) => {
+})
+.then((res) => {
+  console.log(res)
+})
+.catch((error) => {
   console.log(error)
 })
