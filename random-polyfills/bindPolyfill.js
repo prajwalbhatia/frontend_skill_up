@@ -7,7 +7,7 @@ let printName = function () {
 function myBind(...args)
 {
   let obj = this;
-  let params= srgs.slice(1)
+  let params= args.slice(1)
   return function (...args2){
     obj.apply(args[0] , [...params , ...args2])
   }
