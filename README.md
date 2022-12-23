@@ -70,7 +70,7 @@ To get a local copy up and running follow these simple example steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/prajwalbhatia/interviewPrep.git
+   git clone https://github.com/prajwalbhatia/frontend_skill_up.git
    ```
 2. Install NPM packages
    ```sh
@@ -116,7 +116,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Your Name - [@bhatia_prajwal](https://twitter.com/bhatia_prajwal) - prajwal6bhatia@gmail.com
 
-Project Link: [https://github.com/prajwalbhatia/interviewPrep](https://github.com/prajwalbhatia/interviewPrep)
+Project Link: [https://github.com/prajwalbhatia/frontend_skill_up](https://github.com/prajwalbhatia/frontend_skill_up)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -129,14 +129,14 @@ Project Link: [https://github.com/prajwalbhatia/interviewPrep](https://github.co
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/prajwalbhatia/interviewPrep.svg?style=for-the-badge
-[contributors-url]: https://github.com/prajwalbhatia/interviewPrep/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/prajwalbhatia/interviewPrep.svg?style=for-the-badge
-[forks-url]: https://github.com/prajwalbhatia/interviewPrep/network/members
-[stars-shield]: https://img.shields.io/github/stars/prajwalbhatia/interviewPrep.svg?style=for-the-badge
-[stars-url]: https://github.com/prajwalbhatia/interviewPrep/stargazers
-[issues-shield]: https://img.shields.io/github/issues/prajwalbhatia/interviewPrep.svg?style=for-the-badge
-[issues-url]: https://github.com/prajwalbhatia/interviewPrep/issues
+[contributors-shield]: https://img.shields.io/github/contributors/prajwalbhatia/frontend_skill_up.svg?style=for-the-badge
+[contributors-url]: https://github.com/prajwalbhatia/frontend_skill_up/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/prajwalbhatia/frontend_skill_up.svg?style=for-the-badge
+[forks-url]: https://github.com/prajwalbhatia/frontend_skill_up/network/members
+[stars-shield]: https://img.shields.io/github/stars/prajwalbhatia/frontend_skill_up.svg?style=for-the-badge
+[stars-url]: https://github.com/prajwalbhatia/frontend_skill_up/stargazers
+[issues-shield]: https://img.shields.io/github/issues/prajwalbhatia/frontend_skill_up.svg?style=for-the-badge
+[issues-url]: https://github.com/prajwalbhatia/frontend_skill_up/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/prajwalbhatia
 
