@@ -2,7 +2,7 @@
 <br />
 <div align="center">
 
-<h3 align="center">interviewPrep</h3>
+<h3 align="center">frontend_skill_up</h3>
 
   <p align="center">
     A public repositry that contains question, concepts, mini projects everything related to frontend interview preparation but not limited to it. Is will    also help developers to gain more knowledge. 
