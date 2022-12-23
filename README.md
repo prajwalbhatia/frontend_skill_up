@@ -5,7 +5,7 @@
 <h3 align="center">frontend_skill_up</h3>
 
   <p align="center">
-    A public repositry that contains question, concepts, mini projects everything related to frontend interview preparation but not limited to it. Is will    also help developers to gain more knowledge. 
+    A public repositry that contains question, concepts, mini projects everything related to frontend interview preparation but not limited to it. So if you are a frontend developer and want to contribute to the mission of helping all the frontend dev out there so you can contribute to this repo. 
    The main motive of creating this repo is to bring all the frontend related stuff at one place.
     <br />
   </p>
