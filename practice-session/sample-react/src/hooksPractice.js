@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useAsync } from "./customHooks/useAsync";
 import { useIdle } from "./customHooks/useIdle";
 import { usePrevious } from "./customHooks/usePrevious";
@@ -6,6 +6,8 @@ import { useResponsive } from "./customHooks/useResponsive";
 import { useWhyDidYouUpdate } from "./customHooks/useWhyDidYouUpdate";
 
 import React from "react";
+import { useOnScreen } from "./customHooks/useOnScreen";
+import useOnClickOutside from "./customHooks/useOnClickOutside";
 
 // const PreviousHookPractice = () => {
 //   const [count, setCount] = useState(0);
@@ -70,39 +72,74 @@ import React from "react";
 // export default ResponsiveHookPractice;
 
 
-const Counter = React.memo((props) => {
-  useWhyDidYouUpdate("Counter", props);
-  return <div style={props.style} > {props.count} </div>;
-});
+// const Counter = React.memo((props) => {
+//   useWhyDidYouUpdate("Counter", props);
+//   return <div style={props.style} > {props.count} </div>;
+// });
 
-function WhyDidYouUpdatePractice() {
-  const [count, setCount] = useState(0);
-  const [testCase, setTestCase] = useState(null);
-  const counterStyle = {
-    fontSize: "3rem",
-    color: "red",
-  };
-  
+// function WhyDidYouUpdatePractice() {
+//   const [count, setCount] = useState(0);
+//   const [testCase, setTestCase] = useState(null);
+//   const counterStyle = {
+//     fontSize: "3rem",
+//     color: "red",
+//   };
+
+//   return (
+//     <div>
+//       <div className="counter" >
+//         <Counter
+//           count={count}
+//           style={counterStyle}
+//           testCaseWithArray={testCase}
+//           function={() => console.log(count)}
+//         />
+//         <button
+//           onClick={() => {
+//             setCount(count + 1);
+//             setTestCase([count + 1]);
+//           }}
+//         >
+//           Increment
+//         </button>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default WhyDidYouUpdatePractice;
+
+// const Element = ({ number }) => {
+//   const ref = useRef();
+//   const isVisible = useOnScreen(ref);
+//   return (
+//     <div style={{ margin: '60px' }} ref={ref} className="box" >
+//       {number}
+//       {isVisible ? `I am on screen` : `I am invisible`}
+//     </div>
+//   );
+// };
+
+// const OnScreenHookPractice = () => {
+//   const arr = [];
+//   for (let i = 0; i < 20; i++) {
+//     arr.push(<Element key={i} number={i} />);
+//   }
+//   return arr;
+// };
+
+// export default OnScreenHookPractice;
+
+export default function OnClickOutside() {
+  const ref = useRef();
+  useOnClickOutside(ref, () => {
+    console.log("Clicked");
+  });
+
   return (
     <div>
-      <div className="counter" >
-        <Counter
-          count={count}
-          style={counterStyle}
-          testCaseWithArray={testCase}
-          function={() => console.log(count)}
-        />
-        <button
-          onClick={() => {
-            setCount(count + 1);
-            setTestCase([count + 1]);
-          }}
-        >
-          Increment
-        </button>
-      </div>
+      <p> Outside Click me! </p>
+      <p ref={ref} > Click me! </p>
     </div>
   );
 }
-
-export default WhyDidYouUpdatePractice;

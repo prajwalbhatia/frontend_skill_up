@@ -12,7 +12,6 @@ import HooksPractice from './hooksPractice';
 function App() {
   const inputRef = useRef();
   const [name, setName] = useState('');
-  console.log('PARENT COMPONENT')
   const clickHandler = () => {
     inputRef.current.focus();
   }
