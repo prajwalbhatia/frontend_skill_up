@@ -1,0 +1,25 @@
+body
+{
+    text-align: center;
+}
+
+.data-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button
+{
+    height: 40px;
+    width: 100px;
+    background-color: green;
+    color: white;
+}
+
+#para
+{
+    display: none;
+}
