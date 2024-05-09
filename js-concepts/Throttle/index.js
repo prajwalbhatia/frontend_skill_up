@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let timer = 5000;
   let clockTimer = timer / 1000;
+  let clock = null;
 
   function throttle(callback, delay) {
     let waiting = false;
@@ -23,19 +24,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const handleBtnClick = () => {
     paragraph.style.display = "block";
-    let clock = setInterval(() => {
-      if (clockTimer >= 1) {
+    timerSpan.innerHTML = clockTimer;
+
+    clock = setInterval(() => {
+      if (clockTimer >= 0) {
         clockTimer = clockTimer - 1;
-        timerSpan.innerText = clockTimer;
+        timerSpan.innerHTML = clockTimer;
+      }
+
+      if (clockTimer === -1) {
+        clearInterval(clock);
+        clockTimer = timer / 1000;
+        timerSpan.innerHTML = clockTimer;
       }
     }, 1000);
-
-    if (clockTimer === 0) {
-      clearInterval(clock);
-      clockTimer = timer / 1000;
-    }
-
-    timerSpan.innerText = clockTimer;
     console.log("POST OTP CALL");
   };
 
