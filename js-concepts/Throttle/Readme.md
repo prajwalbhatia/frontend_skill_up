@@ -12,3 +12,8 @@ If no timer is set then user will keep on hitting the Get OTP button until they 
 
 So to get rid of this problem a timer is usually set on frontend and this timer is nothing but application of throttling
 
+So basically we have acheived three things from this implementation
+
+- **Rate Limiting:** Throttling limits the rate at which a user can perform an action. In your scenario, the "Get OTP" button is disabled after a click, preventing users from spamming the request.
+- **Resource Management:** By throttling, you prevent overloading the system with excessive requests. Sending OTPs often involves sending emails or SMS, which can consume resources. Throttling ensures smooth operation by staggering requests.
+- **Improved User Experience:** Throttling prevents users from accidentally bombarding themselves with multiple OTP requests. It also provides clear feedback (the timer) about when they can resend the OTP.
