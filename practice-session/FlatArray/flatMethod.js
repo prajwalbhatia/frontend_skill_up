@@ -4,13 +4,6 @@ let arr = [
   [3,6 , [3 , 4]]
 ];
 
-// let arr = [
-//   [1, 2, 3, 4],
-//   [1, 2, 3, [3, 4], 4],
-
-
-// ];
-
 function flat(arr, depth = 1) {
   let result = [];
 
