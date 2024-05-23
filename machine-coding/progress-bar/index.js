@@ -1,43 +1,61 @@
-let progress = document.getElementById('progress');
-let btn = document.getElementById('btn');
+const runButton = document.querySelector("#run-btn");
+const buttonCount = document.querySelector("#btn-count");
+const stopBtn = document.querySelector("#stop-btn");
+const replayBtn = document.querySelector("#replay-btn");
+const clearBtn = document.querySelector("#clear-btn");
+const progress = document.querySelector("#progress");
 
-let count = 0;
+let btnCount = 0;
+let progressVal = 0;
+let interval;
 
-function progresss() {
-  let prog = 0;
-  let interval;
-
-  interval = setInterval(() => {
-    if (prog <= 100) {
-      progress.style.width = `${prog}%`;
-      prog += 1;
-    }
-    else {
-      console.log('log')
-      clearInterval(interval);
-      count--;
-      btn.innerText = `RUN ${count}`;
-      if (count > 0) {
-        progresss();
-      }
-
-      if(count === 0)
-      {
-        progress.style.width = `${0}%`;
-      }
-    }
-  }, 50)
+function updateButtonCount(btnCount) {
+  buttonCount.innerText = btnCount;
 }
 
-function runProcess() {
-  count++;
-  btn.innerText = `RUN ${count}`;
-  // while (count !== 0) {
-  if (count === 1) {
-    progresss();
+function updateProgress(progressVal) {
+  progress.style.width = `${progressVal}%`;
+}
+
+runButton.addEventListener("click", () => {
+  btnCount = btnCount + 1;
+  updateButtonCount(btnCount);
+  if (btnCount === 1) progressFun();
+});
+
+stopBtn.addEventListener("click", () => {
+  if (btnCount && interval) {
+    clearInterval(interval);
+    interval = null;
   }
-  // count--;
-  // }
-}
+});
 
-btn.addEventListener('click', () => runProcess())
+replayBtn.addEventListener("click", () => {
+  if (btnCount && !interval) progressFun();
+});
+
+clearBtn.addEventListener("click", () => {
+  if (btnCount) clearInterval(interval);
+  btnCount = 0;
+  progressVal = 0;
+
+  updateProgress(progressVal);
+  updateButtonCount(btnCount);
+});
+
+function progressFun() {
+  interval = setInterval(() => {
+    if (progressVal < 100) {
+      progressVal = progressVal + 20;
+      updateProgress(progressVal);
+    } else {
+      clearInterval(interval);
+      progressVal = 0;
+      updateProgress(progressVal);
+      btnCount = btnCount - 1;
+      updateButtonCount(btnCount);
+
+      if (btnCount > 0) progressFun();
+    }
+  }, 1000);
+}

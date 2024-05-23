@@ -6,16 +6,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PROGRESS BAR</title>
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./style.css">
 
 </head>
 
 <body>
   <div id="parent">
-    <div id='progress-bar' class="progress-bar">
-      <div id='progress' class="progress"></div>
+    <h1>Progress bar</h1>
+
+    <div id='progress-bar-container'>
+        <div id='progress'></div>
+    </div> 
+
+    <div class="btns-container">
+        <button id='run-btn' class="btn mr-4">Run <span id='btn-count'>0</span></button>
+        <button id='stop-btn' class="btn mr-4">Stop</button>
+        <button id='replay-btn' class="btn mr-4">Replay</button>
+        <button id='clear-btn' class="btn">Clear</button>
     </div>
-    <button id='btn'>Run</button>
   </div>
 
 </body>

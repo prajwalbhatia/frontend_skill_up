@@ -1,0 +1,70 @@
+#parent
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#btn
+{
+    width: 100px;
+    margin-top: 20px;
+}
+
+#progress-bar-container
+{
+    width: 300px;
+    border: 1px solid black;
+    height: 40px;
+}
+
+#progress
+{
+    width: 0%;
+    height: 40px;
+    background-color: blue;
+}
+
+.btns-container
+{
+    display: flex;
+    margin-top: 10px;
+}
+
+.mr-4
+{
+    margin-right: 4px;
+}
+
+.btn
+{
+    color: white;
+    height: 40px;
+    width: 71px;
+    cursor: pointer;
+    border: 1px solid green;
+
+}
+
+#run-btn
+{
+  background-color: green;
+}
+
+#stop-btn
+{
+  background-color: red;
+  border-color: red;
+}
+
+#replay-btn
+{
+    background-color: blue;
+    border-color: blue;
+}
+
+#clear-btn
+{
+    background-color: grey;
+    border-color: grey;
+}
