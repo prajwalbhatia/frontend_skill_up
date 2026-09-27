@@ -25,7 +25,7 @@ Categories describe the main learning pattern. Browser/DOM is also a useful lens
 | --- | --- | --- |
 | UI primitives | [Stepper](stepper/README.md) (React), [Progress bar](progress-bar/README.md), [Star widget](star-widget/README.md) | State, events, component APIs, feedback, accessibility |
 | Interactive components | [Folder structure](folder-structure/README.md) (React), [Comment section](commentSection/README.md), [Memory game](memory-game/README.md) | Recursive data, interaction state, event handling |
-| Async and data-driven UI | [Autocomplete](autocomplete/Readme.md) | Debounce, delayed results, result selection, stale-response questions |
+| Async and data-driven UI | [Autocomplete (browser)](autocomplete/Readme.md), [Autocomplete (React and TypeScript)](react-playground/src/exercises/autocomplete/README.md) | Debounce, delayed results, result selection, stale-response questions |
 | Data layout and performance | [Day calendar](day-calender/README.md) | Time layout, overlap handling, rendering from data |
 | Browser and DOM APIs | [Chess board](chess-board/README.md), [Countdown timer](counterTimer/README.md); also the browser examples above | DOM construction, event delegation, timers, storage |
 
@@ -35,9 +35,9 @@ There are no dedicated debugging, requirement-change, mock-interview, or large-a
 
 For a browser exercise, serve the repository root with a local static server, for example `python3 -m http.server 8000`, then open `http://localhost:8000/machine-coding/<folder>/`. Replace `<folder>` with an existing folder name from the index. Serving over HTTP is useful for the autocomplete ES modules.
 
-The two React exercises have separate existing Create React App projects. In either `stepper/` or `folder-structure/`, run `npm install` and `npm start`. Their dependencies are not installed from the repository root.
+For new React and TypeScript exercises, use the shared [React playground](react-playground/README.md): run `npm install` and `npm run dev` from `react-playground/`, then mount the exercise in its `src/App.tsx`. Each exercise keeps its own code under `src/exercises/` while sharing one runtime.
 
-The current examples are JavaScript. A future React and TypeScript exercise can introduce a small shared playground if several exercises need it. Existing standalone browser exercises do not need a React wrapper to teach DOM behavior.
+The existing `stepper/` and `folder-structure/` React exercises still have separate Create React App projects; run `npm install` and `npm start` inside either folder. They can remain as they are unless a future change needs to migrate them. Standalone browser exercises do not need a React wrapper to teach DOM behavior.
 
 ## Writing an exercise README
 

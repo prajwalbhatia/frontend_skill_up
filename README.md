@@ -13,11 +13,11 @@ A practical collection of frontend engineering concepts, coding exercises, brows
 | [Other polyfills](random-polyfills/) | Bind and compose exercises |
 | [Practice exercises](practice-session/) | JavaScript problems and a React hooks playground |
 
-The collection currently uses JavaScript, browser APIs, and React. TypeScript and other frontend topics can be added as useful exercises are developed; no single framework is required for every example.
+The collection uses JavaScript, browser APIs, and React. A shared React and TypeScript playground is available for new machine-coding exercises; no single framework is required for every example.
 
 ## Run an example
 
-Each example is independent. There is no root `package.json` or repository-wide install step.
+There is no root `package.json` or repository-wide install step. Browser examples have their own entry points; new React exercises share one playground.
 
 - For a browser example, start a local static server from the repository root and open its `index.html`. For example, with Python installed:
 
@@ -26,7 +26,7 @@ Each example is independent. There is no root `package.json` or repository-wide 
   ```
 
   Then visit `http://localhost:8000/machine-coding/autocomplete/`. A local server also supports examples that use JavaScript modules. Other static-server tools work too.
-- For a React example, enter its folder (`machine-coding/stepper`, `machine-coding/folder-structure`, or `practice-session/sample-react`), run `npm install`, then `npm start`.
+- For a new React and TypeScript exercise, use the [shared playground](machine-coding/react-playground/README.md): enter `machine-coding/react-playground`, run `npm install`, then `npm run dev`. The existing `machine-coding/stepper`, `machine-coding/folder-structure`, and `practice-session/sample-react` apps still use `npm install` and `npm start` in their own folders.
 - For a standalone JavaScript snippet, read the file and use the runtime appropriate to its browser or Node APIs. The root `index.html` is a small scratch example, not a launcher for the rest of the repository.
 
 See the [machine-coding guide](machine-coding/README.md) for exercise-specific links and the engineering approach behind them.
