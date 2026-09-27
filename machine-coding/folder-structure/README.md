@@ -1,18 +1,24 @@
-## What is the project about
- Folder structure project is copy of the folder structure we see in the left panel of VSCode.<br/>
+# Folder structure
 
- 1) We can create new folder and files
- 2) We can create folder and files inside a folder 
- 3) We can delete and edit them also
+## Problem and current demo
 
-## To run the project
+Render a nested file tree similar to a file explorer. This React demo loads sample data, expands folders, and offers controls to add files or folders, rename nodes, and delete nodes. From this folder, run `npm install` and `npm start`.
 
-1) Clone the repo <br/>
-2) cd folder-structure && npm install <br/>
-3) npm start <br/>
+## Clarify before implementing
 
-## Project Result 
+- Can the root be renamed or deleted? Can folders be empty?
+- Are duplicate sibling names allowed? Should changes persist?
+- What should Escape, Enter, and blur do while editing?
+- Is keyboard tree navigation required, or is a simpler nested list enough?
 
-[Link to video](https://www.linkedin.com/posts/prajwalbhatia_frontenddevelopment-reactjs-practice-activity-7000535685891821568--3yS?utm_source=share&utm_medium=member_desktop)
+## Component and state model
 
-## If you like my solution then please don't forget to star the repoa and share your solution on social. You can tag me there :-)
+`App` owns the tree data and passes operations to the recursive `FolderStructure` component. Each rendered node owns local expansion and input visibility. `useTraverseTree` contains recursive insert, delete, and rename operations. The selected node's children and indentation are derived from the tree; they need no separate state. Stable node IDs matter because names may change or repeat.
+
+## Engineering follow-ups
+
+The current insert helper mutates a matching folder before returning the tree. Prefer immutable updates so React can reliably detect changes. Validate empty and duplicate names, define behavior for deleting the root, and use stable IDs as React keys. The clickable folder label needs a keyboard-accessible control with visible focus. If this becomes a full tree widget, implement the expected tree keyboard model and ARIA relationships deliberately rather than adding roles alone.
+
+## Verify behavior
+
+Expand several levels; add a nested file and folder; rename and delete a nested node; try empty input and repeated names. Tests should assert the resulting tree data and rendered behavior, including cancellation and keyboard use. The central reusable pattern is recursive rendering with a single owner for hierarchical data.
