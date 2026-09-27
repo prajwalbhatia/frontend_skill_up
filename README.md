@@ -1,142 +1,40 @@
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
+# Frontend Skill Up
 
-<h3 align="center">frontend_skill_up</h3>
+A practical collection of frontend engineering concepts, coding exercises, browser experiments, mini-projects, and interview preparation material. The aim is to help frontend developers learn from working examples and clear explanations, then contribute improvements others can reuse.
 
-  <p align="center">
-    A public repositry that contains question, concepts, mini projects everything related to frontend interview preparation but not limited to it. So if you are a frontend developer and want to contribute to the mission of helping all the frontend dev out there so you can contribute to this repo. 
-   The main motive of creating this repo is to bring all the frontend related stuff at one place.
-    <br />
-  </p>
-</div>
+## Explore the repository
 
+| Area | What you will find |
+| --- | --- |
+| [Machine coding](machine-coding/README.md) | Interactive browser and React exercises, with an approach guide and exercise index |
+| [JavaScript concepts](js-concepts/) | Currying, memoization, debounce, and throttle examples |
+| [Array polyfills](js-array-polyfills/) | Implementations of common array methods |
+| [Promise polyfills](promises-polyfills/) | Promise combinators and a custom Promise exercise |
+| [Other polyfills](random-polyfills/) | Bind and compose exercises |
+| [Practice exercises](practice-session/) | JavaScript problems and a React hooks playground |
 
+The collection currently uses JavaScript, browser APIs, and React. TypeScript and other frontend topics can be added as useful exercises are developed; no single framework is required for every example.
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#support">Support</a></li>
-  </ol>
-</details>
+## Run an example
 
+Each example is independent. There is no root `package.json` or repository-wide install step.
 
+- For a browser example, start a local static server from the repository root and open its `index.html`. For example, with Python installed:
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-### Built With
-
-* React
-* Javascript
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-* npm
   ```sh
-  npm install npm@latest -g
+  python3 -m http.server 8000
   ```
 
-### Installation
+  Then visit `http://localhost:8000/machine-coding/autocomplete/`. A local server also supports examples that use JavaScript modules. Other static-server tools work too.
+- For a React example, enter its folder (`machine-coding/stepper`, `machine-coding/folder-structure`, or `practice-session/sample-react`), run `npm install`, then `npm start`.
+- For a standalone JavaScript snippet, read the file and use the runtime appropriate to its browser or Node APIs. The root `index.html` is a small scratch example, not a launcher for the rest of the repository.
 
-1. Clone the repo
-   ```sh
-   git clone https://github.com/prajwalbhatia/frontend_skill_up.git
-   ```
-2. Install NPM packages
-   ```sh
-   npm install (if it is react project else you are good to go)
-   ```
-3. If it is normal html, js then run on local server (you can use live-server extension) and don't forget to include that particluar file in index.html
-that is present in the root.
+See the [machine-coding guide](machine-coding/README.md) for exercise-specific links and the engineering approach behind them.
 
-4. Now you can view the result in your browser console.
+## Contribute
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Contributions from frontend developers are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting an exercise, explanation, test, or correction. Keep material public, reusable, and understandable without personal preparation context.
 
+## Community and license
 
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/Feature1`)
-3. Commit your Changes (`git commit -m 'Add some Feature1'`)
-4. Push to the Branch (`git push origin feature/Feature1`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@bhatia_prajwal](https://twitter.com/bhatia_prajwal) - prajwal6bhatia@gmail.com
-
-Project Link: [https://github.com/prajwalbhatia/frontend_skill_up](https://github.com/prajwalbhatia/frontend_skill_up)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- SUPPORT -->
-## Support
-
-<a href="https://www.buymeacoffee.com/prajwal6bhJ">BUY ME A COFFEE</a>
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/prajwalbhatia/frontend_skill_up.svg?style=for-the-badge
-[contributors-url]: https://github.com/prajwalbhatia/frontend_skill_up/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/prajwalbhatia/frontend_skill_up.svg?style=for-the-badge
-[forks-url]: https://github.com/prajwalbhatia/frontend_skill_up/network/members
-[stars-shield]: https://img.shields.io/github/stars/prajwalbhatia/frontend_skill_up.svg?style=for-the-badge
-[stars-url]: https://github.com/prajwalbhatia/frontend_skill_up/stargazers
-[issues-shield]: https://img.shields.io/github/issues/prajwalbhatia/frontend_skill_up.svg?style=for-the-badge
-[issues-url]: https://github.com/prajwalbhatia/frontend_skill_up/issues
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/prajwalbhatia
-
+See the [Code of Conduct](CODE_OF_CONDUCT.md). This repository is available under the [MIT License](LICENSE.txt).
