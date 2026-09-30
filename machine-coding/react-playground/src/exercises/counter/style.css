@@ -1,0 +1,79 @@
+.counter-container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.counter-row
+{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter-cta-row
+{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.counter-btn
+{
+    min-height: 50px;
+    width: auto;
+    padding: 20px;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.increment
+{
+    height: 50px;
+    width: 50px;
+    background-color: rgb(142, 225, 142);
+    border: 1px solid rgb(142, 225, 142);
+
+}
+
+.decrement
+{
+    height: 50px;
+    width: 50px;
+    background-color: rgb(231, 26, 26);
+    border: 1px solid rgb(231, 26, 26);
+}
+
+.reset
+{
+    background-color: rgb(231, 26, 26);
+    border: 1px solid rgb(231, 26, 26);
+}
+
+.undo
+{
+    background-color: rgb(193, 193, 220);
+    border: 1px solid rgb(193, 193, 220);
+}
+
+
+.redo
+{
+    background-color: rgb(215, 111, 129);
+    border: 1px solid rgb(215, 111, 129);
+}
+
+.counter-value
+{
+    font-size: 24px;
+}
