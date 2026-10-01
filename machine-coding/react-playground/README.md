@@ -15,6 +15,6 @@ Open the local URL printed by Vite (usually `http://localhost:5173/`). Run `npm 
 
 ## Add an exercise
 
-Put each React exercise in its own folder under `src/exercises/`. Use `src/App.tsx` only to mount the exercise you want to view; keep exercise behavior and any feature-specific data in that exercise's files. `src/main.tsx` and the Vite/TypeScript configuration are shared and should not need copying for each question.
+Put each React exercise in its own folder under `src/exercises/`. Add it to the `exercises` list in `src/App.tsx` to give it a navigation link; keep exercise behavior and any feature-specific data in that exercise's files. `src/main.tsx` and the Vite/TypeScript configuration are shared and should not need copying for each question.
 
-The [autocomplete exercise](src/exercises/autocomplete/README.md) is mounted in `src/App.tsx`. The existing `stepper/` and `folder-structure/` projects predate this playground and keep their current standalone setup.
+The [autocomplete exercise](src/exercises/autocomplete/README.md) opens by default. Use the navigation to switch between autocomplete, counter, and product cache, or open an exercise directly with its hash (`#autocomplete`, `#counter`, or `#product-cache`). The existing `stepper/` and `folder-structure/` projects predate this playground and keep their current standalone setup.
